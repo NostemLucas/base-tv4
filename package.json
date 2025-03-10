@@ -14,10 +14,12 @@
 		"format": "npm-run-all -p lint:fix prettier"
 	},
 	"dependencies": {
+		"@pinia/nuxt": "^0.10.1",
 		"@tailwindcss/vite": "^4.0.12",
 		"clsx": "^2.1.1",
 		"nuxt": "^3.16.0",
 		"nuxt-lucide-icons": "^1.0.5",
+		"pinia": "^3.0.1",
 		"tailwind-merge": "^3.0.2",
 		"tailwind-variants": "^1.0.0",
 		"tailwindcss": "^4.0.12",

@@ -1,7 +1,7 @@
 <template>
 	<div class="bg-background text- container">
 		<NuxtLink to="/home">
-			<Button label="label" @click="console.log('clicked')">
+			<Button label="label">
 				<template #icon-right><LucideGithub /></template>
 			</Button>
 		</NuxtLink>

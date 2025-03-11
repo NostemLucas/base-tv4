@@ -20,11 +20,11 @@
 		base: 'px-6 py-2 duration-500 font-semibold transition-colors ease-in-out flex items-center justify-center gap-1 cursor-pointer w-48',
 		variants: {
 			variant: {
-				text: 'text-primary-500 hover:text-primary-400 active:bg-primary-50',
+				text: 'text-monza-500 hover:text-monza-400 active:bg-monza-50',
 				contained:
-					'bg-primary-500 text-white hover:bg-primary-600 active:bg-primary-700',
+					'bg-monza-500 text-white hover:bg-monza-600 active:bg-monza-700',
 				outlined:
-					'bg-transparent text-primary-500 border-primary-500 hover:bg-primary-500 hover:text-white border hover:border-transparent active:bg-primary-600 active:text-white',
+					'bg-transparent text-monza-500 border-monza-500 hover:bg-monza-500 hover:text-white border hover:border-transparent active:bg-monza-600 active:text-white',
 			},
 			size: {
 				xs: 'text-xs',
@@ -73,7 +73,6 @@
 		:aria-label="props.label"
 		:type="props.type"
 		@click="props.onClick"
-		@blur=""
 	>
 		<slot name="icon-left" />
 		{{ props.label }}

@@ -1,9 +1,7 @@
 <template>
 	<div class="flex min-h-screen flex-col bg-slate-50">
-		<!-- Main content -->
 		<main class="flex flex-1 items-center justify-center p-4">
 			<div class="w-full max-w-md">
-				<!-- Logo -->
 				<div class="mb-8 flex justify-center">
 					<img
 						src="https://www.interactivebrokers.com/images/web/logos/ib-logo.svg"
@@ -12,17 +10,18 @@
 					/>
 				</div>
 
-				<!-- Login Card -->
 				<div
 					class="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-lg"
 				>
 					<!-- Blue header bar -->
-					<div class="h-2 bg-blue-600"></div>
+					<div class="h-2 bg-blue-600" />
 
 					<!-- Login Form -->
 					<div class="p-6 sm:p-8">
 						<div class="mb-6 flex items-center justify-between">
-							<h1 class="text-2xl font-semibold text-slate-800">Login</h1>
+							<h1 class="text-2xl font-semibold text-slate-800">
+								Iniciar Sesión
+							</h1>
 
 							<!-- Toggle Switch -->
 							<div class="flex items-center gap-3 text-sm">
@@ -32,19 +31,19 @@
 										'text-slate-500': !isLive,
 									}"
 								>
-									Live
+									Claro
 								</span>
 								<label class="relative inline-block h-6 w-12">
 									<input
+										v-model="isLive"
 										type="checkbox"
 										class="h-0 w-0 opacity-0"
-										v-model="isLive"
 										@change="toggleMode"
 									/>
 									<span
 										class="absolute top-0 right-0 bottom-0 left-0 cursor-pointer rounded-full bg-slate-200 transition-all duration-300 before:absolute before:bottom-1 before:left-1 before:h-4 before:w-4 before:rounded-full before:bg-white before:transition-all before:duration-300"
 										:class="{ 'bg-blue-600 before:translate-x-6': !isLive }"
-									></span>
+									/>
 								</label>
 								<span
 									:class="{
@@ -52,12 +51,11 @@
 										'text-slate-500': isLive,
 									}"
 								>
-									Paper
+									Oscuro
 								</span>
 							</div>
 						</div>
 
-						<!-- Username Field -->
 						<div class="mb-4">
 							<div class="relative">
 								<div
@@ -76,9 +74,9 @@
 									</svg>
 								</div>
 								<input
-									type="text"
 									v-model="username"
-									placeholder="Username"
+									type="text"
+									placeholder="Nombre de Usuario"
 									class="w-full rounded-lg border border-slate-300 py-3 pr-4 pl-10 transition-all outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
 									:class="{
 										'border-red-500 focus:border-red-500 focus:ring-red-500':
@@ -117,9 +115,9 @@
 									</svg>
 								</div>
 								<input
-									:type="showPassword ? 'text' : 'password'"
 									v-model="password"
-									placeholder="Password"
+									:type="showPassword ? 'text' : 'password'"
+									placeholder="Contraseña"
 									class="w-full rounded-lg border border-slate-300 py-3 pr-10 pl-10 transition-all outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
 									:class="{
 										'border-red-500 focus:border-red-500 focus:ring-red-500':
@@ -128,8 +126,8 @@
 								/>
 								<button
 									type="button"
-									@click="togglePasswordVisibility"
 									class="absolute inset-y-0 right-0 flex items-center pr-3 text-slate-400 hover:text-slate-600"
+									@click="togglePasswordVisibility"
 								>
 									<svg
 										v-if="showPassword"
@@ -178,9 +176,9 @@
 
 						<!-- Login Button -->
 						<button
-							@click="login"
 							class="w-full rounded-lg bg-blue-600 px-4 py-3 font-medium text-white transition-colors hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
 							:disabled="isLoading"
+							@click="login"
 						>
 							<span v-if="isLoading" class="flex items-center justify-center">
 								<svg
@@ -205,18 +203,18 @@
 								</svg>
 								Logging in...
 							</span>
-							<span v-else>Login</span>
+							<span v-else>Inciar Sesion</span>
 						</button>
 
 						<!-- Free Trial Link -->
 						<div class="mt-4 text-center">
 							<p class="text-sm text-slate-600">
-								Don't have an account?
+								No tienes una cuenta?
 								<a
 									href="#"
 									class="font-medium text-blue-600 hover:text-blue-800"
 								>
-									Try the free trial
+									Resgitarte
 								</a>
 							</p>
 						</div>
@@ -238,7 +236,7 @@
 							target="_blank"
 							class="flex items-center gap-1 text-sm text-slate-600 transition-colors hover:text-blue-600"
 						>
-							InteractiveBrokers.com
+							SynergySoft
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								class="h-4 w-4"
@@ -256,7 +254,6 @@
 						</a>
 					</div>
 
-					<!-- Center platform links -->
 					<div class="flex flex-wrap justify-center gap-x-6 gap-y-2">
 						<a
 							href="#"
@@ -382,7 +379,6 @@
 <script setup>
 	import { ref, reactive } from 'vue';
 
-	// State
 	const isLive = ref(true);
 	const username = ref('');
 	const password = ref('');
@@ -393,9 +389,7 @@
 		password: '',
 	});
 
-	// Methods
 	const toggleMode = () => {
-		// Toggle between Live and Paper trading modes
 		console.log(`Switched to ${isLive.value ? 'Live' : 'Paper'} mode`);
 	};
 
@@ -406,17 +400,14 @@
 	const validateForm = () => {
 		let isValid = true;
 
-		// Reset errors
 		errors.username = '';
 		errors.password = '';
 
-		// Validate username
 		if (!username.value.trim()) {
 			errors.username = 'Username is required';
 			isValid = false;
 		}
 
-		// Validate password
 		if (!password.value) {
 			errors.password = 'Password is required';
 			isValid = false;
@@ -440,6 +431,8 @@
 				mode: isLive.value ? 'Live' : 'Paper',
 			});
 
+			// Handle successful login here
+			// For demo purposes, we'll just log a success message
 			console.log('Login successful!');
 		} catch (error) {
 			console.error('Login failed:', error);

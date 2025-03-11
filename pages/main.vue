@@ -476,7 +476,7 @@
 	};
 </script>
 
-<style>
+<style scoped>
 	/* Hide scrollbar but allow scrolling */
 	.hide-scrollbar {
 		-ms-overflow-style: none; /* IE and Edge */

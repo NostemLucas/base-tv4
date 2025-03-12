@@ -65,7 +65,7 @@
 			>
 				<!-- Left section with menu toggle and breadcrumb -->
 				<div class="flex items-center gap-2">
-					<button @click="toggleSidebar" class="p-1 lg:hidden">
+					<button class="p-1 lg:hidden" @click="toggleSidebar">
 						<menu-icon class="h-5 w-5 text-gray-600" />
 					</button>
 

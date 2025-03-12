@@ -485,7 +485,6 @@
 		--primary-hover: #be123c;
 	}
 
-	/* Tailwind v4 compatible dark mode */
 	.dark {
 		color-scheme: dark;
 	}

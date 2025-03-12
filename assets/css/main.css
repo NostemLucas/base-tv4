@@ -92,39 +92,6 @@
 	--color-cod-gray-950: hsl(60 5% 11%);
 }
 
-@media (prefers-color-scheme: dark) {
-	@theme {
-		/* Paleta principal */
-		--color-primary-50: hsl(354 100% 97%);
-		--color-primary-100: hsl(354 100% 94%);
-		--color-primary-200: hsl(354 100% 87%);
-		--color-primary-300: hsl(354 100% 79%);
-		--color-primary-400: hsl(354 100% 69%);
-		--color-primary-500: hsl(358 94% 60%);
-		--color-primary-600: hsl(359 84% 50%);
-		--color-primary-700: hsl(359 81% 46%);
-		--color-primary-800: hsl(359 78% 35%);
-		--color-primary-900: hsl(359 72% 30%);
-		--color-primary-950: hsl(359 81% 16%);
-
-		--color-chicago-50: hsl(0 3% 96%);
-		--color-chicago-100: hsl(0 3% 90%);
-		--color-chicago-200: hsl(0 3% 82%);
-		--color-chicago-300: hsl(0 3% 69%);
-		--color-chicago-400: hsl(0 2% 53%);
-		--color-chicago-500: hsl(0 2% 43%);
-		--color-chicago-600: hsl(0 2% 37%);
-		--color-chicago-700: hsl(0 2% 34%);
-		--color-chicago-800: hsl(30 2% 27%);
-		--color-chicago-900: hsl(0 2% 24%);
-		--color-chicago-950: hsl(0 0% 15%);
-
-		/* Paleta Secundaria */
-		--color-vista-blue-50: hsl(150 50% 96%);
-		--color-vista-blue-100: hsl(152 52% 90%);
-		--color-vista-blue-200: hsl(157 49% 80%);
-		--color-vista-blue-300:
-}
 body {
 	font-family: 'Roboto', sans-serif;
 }
